@@ -1,4 +1,4 @@
-# The Extractor for GHDB
+# GHDB Extractor 
 <img src="extractor.png">
 The Extractor is a Python script that extracts Google dorks from the official Google Hacking Database (GHDB) XML file and saves them in a CSV file. The script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning. It is only for education & example!!!!
 
@@ -12,11 +12,11 @@ The Extractor is a Python script that extracts Google dorks from the official Go
 - Save the file in the same directory as the Python script.
 - Run the script:
 ```shell
-python extractor.py
+python gextractor.py
 ```
 or
 ```shell
-python3 extractor.py
+python3 gextractor.py
 ```
 - The script will check if an Internet connection is available. If yes, it will download the latest GHDB XML file. If no, it will use the local file (if available) or ask if you want to create a local copy of the GHDB XML file.
 - The script will extract the dorks and save them in a CSV file named extracted_dorks.csv in the same directory as the script.
