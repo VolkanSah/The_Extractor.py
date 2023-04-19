@@ -1,25 +1,33 @@
-# Example: "How to create an extractor with python3?"
-
-# ▄▄▄█████▓ ██░ ██ ▓█████    ▓█████ ▒██   ██▒▄▄▄█████▓ ██▀███   ▄▄▄       ▄████▄  ▄▄▄█████▓ ▒█████   ██▀███ 
-#▓  ██▒ ▓▒▓██░ ██▒▓█   ▀    ▓█   ▀ ▒▒ █ █ ▒░▓  ██▒ ▓▒▓██ ▒ ██▒▒████▄    ▒██▀ ▀█  ▓  ██▒ ▓▒▒██▒  ██▒▓██ ▒ ██▒
-#▒ ▓██░ ▒░▒██▀▀██░▒███      ▒███   ░░  █   ░▒ ▓██░ ▒░▓██ ░▄█ ▒▒██  ▀█▄  ▒▓█    ▄ ▒ ▓██░ ▒░▒██░  ██▒▓██ ░▄█ ▒
-#░ ▓██▓ ░ ░▓█ ░██ ▒▓█  ▄    ▒▓█  ▄  ░ █ █ ▒ ░ ▓██▓ ░ ▒██▀▀█▄  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒░ ▓██▓ ░ ▒██   ██░▒██▀▀█▄  
-#  ▒██▒ ░ ░▓█▒░██▓░▒████▒   ░▒████▒▒██▒ ▒██▒  ▒██▒ ░ ░██▓ ▒██▒ ▓█   ▓██▒▒ ▓███▀ ░  ▒██▒ ░ ░ ████▓▒░░██▓ ▒██▒
-#  ▒ ░░    ▒ ░░▒░▒░░ ▒░ ░   ░░ ▒░ ░▒▒ ░ ░▓ ░  ▒ ░░   ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ░▒ ▒  ░  ▒ ░░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░
-#    ░     ▒ ░▒░ ░ ░ ░  ░    ░ ░  ░░░   ░▒ ░    ░      ░▒ ░ ▒░  ▒   ▒▒ ░  ░  ▒       ░      ░ ▒ ▒░   ░▒ ░ ▒░
-#  ░       ░  ░░ ░   ░         ░    ░    ░    ░        ░░   ░   ░   ▒   ░          ░      ░ ░ ░ ▒    ░░   ░ 
-#          ░  ░  ░   ░  ░      ░  ░ ░    ░              ░           ░  ░░ ░                   ░ ░     ░     
-#                                                                       ░                                   
+# Example: "How to create an extractor with python3?"   
 import os
 import csv
 import uuid
 import requests
 from datetime import datetime
 import xml.etree.ElementTree as ET
+class color:
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    END = '\033[0m'
+    @staticmethod
+    def log(lvl, col, msg):
+        logger.log(lvl, col + msg + color.END)
+# 4.2 print markdown
+print color.BOLD + color.GREEN + """
 
+ ▄▄▄█████▓ ██░ ██ ▓█████    ▓█████ ▒██   ██▒▄▄▄█████▓ ██▀███   ▄▄▄       ▄████▄  ▄▄▄█████▓ ▒█████   ██▀███ 
+▓  ██▒ ▓▒▓██░ ██▒▓█   ▀    ▓█   ▀ ▒▒ █ █ ▒░▓  ██▒ ▓▒▓██ ▒ ██▒▒████▄    ▒██▀ ▀█  ▓  ██▒ ▓▒▒██▒  ██▒▓██ ▒ ██▒
+▒ ▓██░ ▒░▒██▀▀██░▒███      ▒███   ░░  █   ░▒ ▓██░ ▒░▓██ ░▄█ ▒▒██  ▀█▄  ▒▓█    ▄ ▒ ▓██░ ▒░▒██░  ██▒▓██ ░▄█ ▒
+░ ▓██▓ ░ ░▓█ ░██ ▒▓█  ▄    ▒▓█  ▄  ░ █ █ ▒ ░ ▓██▓ ░ ▒██▀▀█▄  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒░ ▓██▓ ░ ▒██   ██░▒██▀▀█▄  
+  ▒██▒ ░ ░▓█▒░██▓░▒████▒   ░▒████▒▒██▒ ▒██▒  ▒██▒ ░ ░██▓ ▒██▒ ▓█   ▓██▒▒ ▓███▀ ░  ▒██▒ ░ ░ ████▓▒░░██▓ ▒██▒
+  ▒ ░░    ▒ ░░▒░▒░░ ▒░ ░   ░░ ▒░ ░▒▒ ░ ░▓ ░  ▒ ░░   ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ░▒ ▒  ░  ▒ ░░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░
+    ░     ▒ ░▒░ ░ ░ ░  ░    ░ ░  ░░░   ░▒ ░    ░      ░▒ ░ ▒░  ▒   ▒▒ ░  ░  ▒       ░      ░ ▒ ▒░   ░▒ ░ ▒░
+  ░       ░  ░░ ░   ░         ░    ░    ░    ░        ░░   ░   ░   ▒   ░          ░      ░ ░ ░ ▒    ░░   ░ 
+          ░  ░  ░   ░  ░      ░  ░ ░    ░              ░           ░  ░░ ░                   ░ ░     ░     
+                                                                       ░                                
+""" + color.END
 # URL for the GHDB XML file
 URL = "https://gitlab.com/exploit-database/exploitdb/-/raw/main/ghdb.xml"
-
 # Check if internet connection is available
 def is_internet_available():
     try:
@@ -27,7 +35,6 @@ def is_internet_available():
         return True
     except:
         return False
-
 # Download the GHDB XML file if internet is available
 def download_xml():
     if is_internet_available():
