@@ -20,7 +20,7 @@ or
 python3 extractor.py
 ```
 - The script will check if an Internet connection is available. If yes, it will download the latest GHDB XML file. If no, it will use the local file (if available) or ask if you want to create a local copy of the GHDB XML file.
-- The script will extract the dorks and save them in a CSV file named extracted_dorks.csv in the same directory as the script.
+- The script will extract the dorks and save them in a CSV file named extractor_data.csv in the same directory as the script.
 ## Note
 **The Extractor script is intended for educational and ethical purposes only. The extracted dorks should only be used for ethical hacking and web security testing. The script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning**
 
