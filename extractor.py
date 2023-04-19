@@ -1,4 +1,4 @@
-# Example: "How to create an extractor with python3?"   
+#!/usr/bin/env python
 import os
 import csv
 import uuid
