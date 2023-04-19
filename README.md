@@ -27,7 +27,7 @@ python3 extractor.py
 ## Disclaimer
 The authors of The Extractor do not condone illegal activities and are not responsible for any misuse of the extracted dorks. Always use the extracted dorks responsibly and in accordance with the law.
 
-## createt by
-Volkan S. Kücükbudak
+## Copyright
+S. Volkan Kücükbudak
 ## License
 This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
