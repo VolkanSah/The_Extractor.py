@@ -23,7 +23,7 @@ URL = "https://gitlab.com/exploit-database/exploitdb/-/raw/main/ghdb.xml"
 # Check if internet connection is available
 def is_internet_available():
     try:
-        requests.get("http://github.com")
+        requests.get("https://github.com/VolkanSah")
         return True
     except:
         return False
