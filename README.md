@@ -13,11 +13,11 @@ The Extractor is a Python script that extracts Google dorks from the official Go
 - Save the file in the same directory as the Python script.
 - Run the script:
 ```shell
-python gextractor.py
+python extractor.py
 ```
 or
 ```shell
-python3 gextractor.py
+python3 extractor.py
 ```
 - The script will check if an Internet connection is available. If yes, it will download the latest GHDB XML file. If no, it will use the local file (if available) or ask if you want to create a local copy of the GHDB XML file.
 - The script will extract the dorks and save them in a CSV file named extracted_dorks.csv in the same directory as the script.
