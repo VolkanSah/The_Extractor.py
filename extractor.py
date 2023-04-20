@@ -23,8 +23,11 @@ parser.add_argument('-txt', action='store_true', dest='export_txt', help='Export
 parser.add_argument('-sqlite', action='store_true', dest='export_sqlite', help='Export data to a SQLite database')
 results = parser.parse_args()
 
-# Set logger level based on verbosity flag
-logger.setLevel(logging.DEBUG if results.verbose else logging.INFO)
+# Set logger level based on export flags
+if any([results.export_xml, results.export_csv, results.export_txt, results.export_sqlite]):
+    logger.setLevel(logging.DEBUG)
+else:
+    logger.setLevel(logging.INFO)
 
 class color:
     RED = '\033[91m'
