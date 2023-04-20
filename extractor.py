@@ -1,3 +1,4 @@
+# Extractor Lite
 import os
 import csv
 import uuid
