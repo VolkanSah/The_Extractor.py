@@ -3,6 +3,7 @@
 The Extractor is a Python script that extracts Google dorks from the official Google Hacking Database (GHDB) XML file and saves them in a CSV file. The script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning. It is only for education & example!!!!
 
 ## Prerequisites
+- testet on Linux/Unix Bash-installed systems
 - Python 3.x
 - requests module (you can install it via pip: pip install requests)
 - CSV module (built-in module in Python)
