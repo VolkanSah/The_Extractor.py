@@ -5,29 +5,50 @@ import uuid
 import requests
 from datetime import datetime
 import xml.etree.ElementTree as ET
+import argparse
+import logging
+
+# Set up logger
+logger = logging.getLogger(__name__)
+lh = logging.StreamHandler()
+logger.addHandler(lh)
+formatter = logging.Formatter('[%(asctime)s] %(message)s', datefmt='%H:%M:%S')
+lh.setFormatter(formatter)
+
+# Set up argument parser
+parser = argparse.ArgumentParser(description='Extract Google dorks from the official Google Hacking Database (GHDB) and save them in various file formats.')
+parser.add_argument('-xml', action='store_true', dest='export_xml', help='Export data in a .xml-file')
+parser.add_argument('-csv', action='store_true', dest='export_csv', help='Export data in a .csv-file')
+parser.add_argument('-txt', action='store_true', dest='export_txt', help='Export data in a .txt-file')
+parser.add_argument('-sqlite', action='store_true', dest='export_sqlite', help='Export data to a SQLite database')
+results = parser.parse_args()
+
+# Set logger level based on verbosity flag
+logger.setLevel(logging.DEBUG if results.verbose else logging.INFO)
+
 class color:
     RED = '\033[91m'
     BOLD = '\033[1m'
     END = '\033[0m'
+
     @staticmethod
     def log(lvl, col, msg):
         logger.log(lvl, col + msg + color.END)
-# 4.2 print markdown
-print color.BOLD + color.GREEN + """
 
- ▄▄▄█████▓ ██░ ██ ▓█████    ▓█████ ▒██   ██▒▄▄▄█████▓ ██▀███   ▄▄▄       ▄████▄  ▄▄▄█████▓ ▒█████   ██▀███ 
-▓  ██▒ ▓▒▓██░ ██▒▓█   ▀    ▓█   ▀ ▒▒ █ █ ▒░▓  ██▒ ▓▒▓██ ▒ ██▒▒████▄    ▒██▀ ▀█  ▓  ██▒ ▓▒▒██▒  ██▒▓██ ▒ ██▒
-▒ ▓██░ ▒░▒██▀▀██░▒███      ▒███   ░░  █   ░▒ ▓██░ ▒░▓██ ░▄█ ▒▒██  ▀█▄  ▒▓█    ▄ ▒ ▓██░ ▒░▒██░  ██▒▓██ ░▄█ ▒
-░ ▓██▓ ░ ░▓█ ░██ ▒▓█  ▄    ▒▓█  ▄  ░ █ █ ▒ ░ ▓██▓ ░ ▒██▀▀█▄  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒░ ▓██▓ ░ ▒██   ██░▒██▀▀█▄  
-  ▒██▒ ░ ░▓█▒░██▓░▒████▒   ░▒████▒▒██▒ ▒██▒  ▒██▒ ░ ░██▓ ▒██▒ ▓█   ▓██▒▒ ▓███▀ ░  ▒██▒ ░ ░ ████▓▒░░██▓ ▒██▒
-  ▒ ░░    ▒ ░░▒░▒░░ ▒░ ░   ░░ ▒░ ░▒▒ ░ ░▓ ░  ▒ ░░   ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ░▒ ▒  ░  ▒ ░░   ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░
-    ░     ▒ ░▒░ ░ ░ ░  ░    ░ ░  ░░░   ░▒ ░    ░      ░▒ ░ ▒░  ▒   ▒▒ ░  ░  ▒       ░      ░ ▒ ▒░   ░▒ ░ ▒░
-  ░       ░  ░░ ░   ░         ░    ░    ░    ░        ░░   ░   ░   ▒   ░          ░      ░ ░ ░ ▒    ░░   ░ 
-          ░  ░  ░   ░  ░      ░  ░ ░    ░              ░           ░  ░░ ░                   ░ ░     ░     
-                                                                       ░                                
-""" + color.END
+# Print header
+print(color.BOLD + color.GREEN + """
+[LOGO]
+
+The Extractor is a Python script that extracts Google dorks from the official Google Hacking Database (GHDB) and saves them in various file formats.
+The script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning.
+WARNING: The Extractor script is intended for educational and ethical purposes only. The extracted dorks should only be used for ethical hacking and web security testing. The author and the publisher of the script are not responsible for any misuse or illegal activities.
+
+Usage: extractorpy <option> <filename>
+""" + color.END)
+
 # URL for the GHDB XML file
 URL = "https://gitlab.com/exploit-database/exploitdb/-/raw/main/ghdb.xml"
+
 # Check if internet connection is available
 def is_internet_available():
     try:
@@ -35,6 +56,7 @@ def is_internet_available():
         return True
     except:
         return False
+
 # Download the GHDB XML file if internet is available
 def download_xml():
     if is_internet_available():
