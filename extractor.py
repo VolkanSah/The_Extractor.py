@@ -48,13 +48,14 @@ print(color.BOLD + color.RED + """
   ░       ░  ░░ ░   ░         ░    ░    ░    ░        ░░   ░   ░   ▒   ░          ░      ░ ░ ░ ▒    ░░   ░ 
           ░  ░  ░   ░  ░      ░  ░ ░    ░              ░           ░  ░░ ░                   ░ ░     ░     
                                                                        ░                                   
-Copyright S. Volkan Kücükbudak  (Source: https://github.com/VolkanSah/The_Extractor.py)
+Copyright (2008-24 ) S. Volkan Kücükbudak  
+(Source: https://github.com/VolkanSah/The_Extractor.py)
 The Extractor is a Python script that extracts Google dorks from the official Google Hacking Database (GHDB) and saves them in various file formats.
 The script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning.
 WARNING: The Extractor script is intended for educational and ethical purposes only. 
 The extracted dorks should only be used for ethical hacking and web security testing. The author and the publisher of the script are not 
 responsible for any misuse or illegal activities.
-
+Createt for Poision Ivory
 Usage: extractorpy <option> <filename>
 """ + color.END)
 
