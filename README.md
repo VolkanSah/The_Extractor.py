@@ -1,4 +1,4 @@
-# The Extractor (GHDB)
+# The Extractor (GHDB) lite
 <img src="extractor.png">
 The Extractor is a Python script that extracts Google dorks from the official Google Hacking Database (GHDB) and saves them in a CSV-file. The script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning.
 
