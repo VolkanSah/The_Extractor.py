@@ -5,6 +5,29 @@ import requests
 from datetime import datetime
 import xml.etree.ElementTree as ET
 
+
+class color:
+    BLUE = '\033[94m'
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    BOLD = '\033[1m'
+    END = '\033[0m'
+    @staticmethod
+    def log(lvl, col, msg):
+        logger.log(lvl, col + msg + color.END)
+# 4.2 print markdown
+print color.BOLD + color.GREEN + """
+
+logo
+
+
+
+
+
+
+""" + color.END
+
 # URL for the GHDB XML file
 URL = "https://gitlab.com/exploit-database/exploitdb/-/raw/main/ghdb.xml"
 
