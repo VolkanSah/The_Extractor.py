@@ -28,6 +28,7 @@ python3 extractor.py [options] <filename>
 - -csv: Export data in a .csv-file
 - -txt: Export data in a .txt-file
 - -sqlite: Export data to a SQLite database
+
 The <filename> argument is optional and specifies the name of the output file. If not provided, the default name extractor_data will be used.
 
 - The script will check if an Internet connection is available. If yes, it will download the latest GHDB XML file. If no, it will use the local file (if available) or ask if you want to create a local copy of the GHDB XML file.
