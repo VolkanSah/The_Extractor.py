@@ -30,15 +30,7 @@ python3 extractor.py
 - The script will extract the dorks and save them in the specified output format (CSV by default) in the same directory as the script.
 ## Note
 - The Extractor script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning.
-## Disclaimer
-The authors of The Extractor do not condone illegal activities and are not responsible for any misuse of the extracted dorks. Always use the extracted dorks responsibly and in accordance with the law.
-## Copyright
-S. Volkan Kücükbudak
-## License
-This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
-
-## Note
-The Extractor (Nemesis Version) is now included in
+- The Extractor (Nemesis Version) is now included in
 ```
               .__                      .__                          
 ______   ____ |__| __________   ____   |__| __  _____________ ___.__.
@@ -47,3 +39,9 @@ ______   ____ |__| __________   ____   |__| __  _____________ ___.__.
 |   __/ \____/|__/____  >____/|___|  / |__| \_/ \____/|__|   / ____|
 |__|  nemesis v.2.5.23 \/           \/   © 2008-2023 Volkan Sah   \/   
 ```
+## Disclaimer
+The authors of The Extractor do not condone illegal activities and are not responsible for any misuse of the extracted dorks. Always use the extracted dorks responsibly and in accordance with the law.
+## Copyright
+S. Volkan Kücükbudak
+## License
+This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
