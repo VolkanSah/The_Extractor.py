@@ -30,7 +30,7 @@ python3 extractor.py
 - The script will extract the dorks and save them in the specified output format (CSV by default) in the same directory as the script.
 ## Note
 - The Extractor script only extracts dorks that contain the "inurl:" operator because they are more specific and useful for targeted web scanning.
-- The Extractor (Nemesis Version) is now included in
+- The Extractor (Nemesis Version) is now included in PoisonIvory (see version below)
 ```
               .__                      .__                          
 ______   ____ |__| __________   ____   |__| __  _____________ ___.__.
