@@ -36,3 +36,14 @@ The authors of The Extractor do not condone illegal activities and are not respo
 S. Volkan Kücükbudak
 ## License
 This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
+
+## Note
+The Extractor (Nemesis Version) is now included in
+```
+              .__                      .__                          
+______   ____ |__| __________   ____   |__| __  _____________ ___.__.
+\____ \ /  _ \|  |/  ___/  _ \ /    \  |  \  \/ /  _ \_  __ <   |  |
+|  |_> >  <_> )  |\___ (  <_> )   |  \ |  |\   (  <_> )  | \/\___  |
+|   __/ \____/|__/____  >____/|___|  / |__| \_/ \____/|__|   / ____|
+|__|  nemesis v.2.5.23 \/           \/   © 2008-2023 Volkan Sah   \/   
+```
