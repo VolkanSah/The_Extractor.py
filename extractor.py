@@ -1,4 +1,6 @@
 # Extractor Lite
+# This script is for example only
+# How to create local scrapper for import>xml export>csv
 import os
 import csv
 import uuid
