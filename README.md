@@ -5,6 +5,8 @@ The Extractor is a Python script that extracts Google dorks from the official Go
 ## Warning: 
 The Extractor script is intended for educational and ethical purposes only. The extracted dorks should only be used for ethical hacking and web security testing. The authors of The Extractor do not condone illegal activities and are not responsible for any misuse of the extracted dorks. Always use the extracted dorks responsibly and in accordance with the law.
 
+This script is part of a larger collection and was created to be used with caution. Some functions have been removed to prevent any malicious attacks, but it remains a simple yet powerful script that can be used for bad sites.
+
 ## Prerequisites
 The script has been tested on Linux/Unix Bash-installed systems.
 - Python 3.x
