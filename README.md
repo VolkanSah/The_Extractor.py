@@ -44,6 +44,8 @@ ______   ____ |__| __________   ____   |__| __  _____________ ___.__.
 ## Disclaimer
 The authors of The Extractor do not condone illegal activities and are not responsible for any misuse of the extracted dorks. Always use the extracted dorks responsibly and in accordance with the law.
 ## Copyright
-S. Volkan Kücükbudak
+- [VolkanSah on Github](https://github.com/volkansah)
+- [Developer Site](https://volkansah.github.io)
+- [Become a 'Sponsor'](https://github.com/sponsors/volkansah)
 ## License
 This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
